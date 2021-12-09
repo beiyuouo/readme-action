@@ -1,0 +1,45 @@
+name: "social-readme"
+author: zylele
+description: "Add social feed in your Readme"
+
+inputs:
+  gh_token:
+    description: "GitHub access token with Repo scope"
+    default: ${{ github.token }}
+    required: true
+
+  repository:
+    description: "Your GitHub repository"
+    default: ${{ github.repository }}
+    required: false
+
+  commit_message:
+    description:  "COMMIT_MESSAGE"
+    default: "Updated social rss by social-readme"
+    required: false
+
+  blog_rss_link:
+    description: "Your Blog rss link"
+    required: false
+
+  blog_limit:
+    description: "Your Blog LIMIT"
+    default: "5"
+    required: false
+
+  douban_name:
+    description: "Your Douban name"
+    required: false
+
+  douban_limit:
+    description: "Your Douban LIMIT"
+    default: "5"
+    required: false
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+
+branding:
+  icon: "aperture"
+  color: "green"
