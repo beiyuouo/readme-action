@@ -66,7 +66,7 @@ def generate_douban(
     } for item in entries[:limit]]
 
     content = "\n".join([
-        f"| {item['published']} | {item['title'][:2]}{douban_emoji[item['title'][:2]]} <a href='{item['url']}' target='_blank'>{item['title'][2:]}</a> |"
+        f"| {item['published']} | {item['title'][:2]}{get_emoji(item['title'][:2])} <a href='{item['url']}' target='_blank'>{item['title'][2:]}</a> |"
         for item in arr
     ])
 
@@ -85,6 +85,13 @@ def generate_new_readme(start_comment: str, end_comment: str, content: str, read
         )
 
     return re.sub(pattern, repl, readme)
+
+
+def get_emoji(title: str) -> str:
+    """Get emoji for title"""
+    if title[:2] in douban_emoji:
+        return douban_emoji[title[:2]]
+    return ''
 
 
 def format_time(timestamp,
