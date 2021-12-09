@@ -13,6 +13,17 @@ douban_emoji = {
     '在看': '👀',
     '看过': '😎',
     '想看': '🤔',
+    '想听': '🎈',
+    '听过': '😋',
+    '在听': '🎧',
+}
+
+douban_star = {
+    '力荐': '⭐⭐⭐⭐⭐',
+    '推荐': '⭐⭐⭐⭐',
+    '还行': '⭐⭐⭐',
+    '较差': '⭐⭐',
+    '很差': '⭐',
 }
 
 
@@ -63,10 +74,13 @@ def generate_douban(
         item["link"].split("#")[0],
         "published":
         format_time(item["published"], time_format=time_format, time_zone=time_zone),
+        "desc":
+        item["description"],
     } for item in entries[:limit]]
 
     content = "\n".join([
-        f"| {item['published']} | {item['title'][:2]}{get_emoji(item['title'][:2])} <a href='{item['url']}' target='_blank'>{item['title'][2:]}</a> |"
+        f"| {item['published']} | {item['title'][:2]}{get_emoji(item['title'][:2])} "
+        f"<a href='{item['url']}' target='_blank'>{item['title'][2:]}</a> {get_star(item['desc'])} |"
         for item in arr
     ])
 
@@ -92,6 +106,14 @@ def get_emoji(title: str) -> str:
     if title[:2] in douban_emoji:
         return douban_emoji[title[:2]]
     return ''
+
+
+def get_star(description: str) -> int:
+    pattern = r"<p>推荐: (n|.)*</p>"
+    if re.search(pattern, description) is None:
+        return ""
+    star = re.search(pattern, description).group(0).split(": ")[1].split("</p>")[0]
+    return douban_star[star]
 
 
 def format_time(timestamp,
