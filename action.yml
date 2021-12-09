@@ -15,7 +15,7 @@ inputs:
 
   commit_message:
     description: "COMMIT_MESSAGE"
-    default: "Updated social rss by social-readme"
+    default: "Updated README Profile by readme action"
     required: false
 
   blog_rss_link:

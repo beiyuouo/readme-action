@@ -9,6 +9,12 @@ BLOG_END_COMMENT = '<!-- END_SECTION:blog -->'
 DOUBAN_START_COMMENT = '<!-- START_SECTION:douban -->'
 DOUBAN_END_COMMENT = '<!-- END_SECTION:douban -->'
 
+douban_emoji = {
+    '在看': '👀',
+    '看过': '😎',
+    '想看': '🤔',
+}
+
 
 def generate_blog(
     rss_link,
@@ -60,7 +66,7 @@ def generate_douban(
     } for item in entries[:limit]]
 
     content = "\n".join([
-        f"| {item['published']} | {item['title'][:2]}  <a href='{item['url']}' target='_blank'>{item['title'][2:]}</a> |"
+        f"| {item['published']} | {item['title'][:2]}{douban_emoji[item['title'][:2]]} <a href='{item['url']}' target='_blank'>{item['title'][2:]}</a> |"
         for item in arr
     ])
 
