@@ -1,0 +1,55 @@
+name: "readme-action"
+author: Bingjie Yan
+description: "Add feed in your GitHub Profile using Actions"
+
+inputs:
+  gh_token:
+    description: "GitHub access token with Repo scope"
+    default: ${{ github.token }}
+    required: true
+
+  repository:
+    description: "Your GitHub repository"
+    default: ${{ github.repository }}
+    required: false
+
+  commit_message:
+    description: "COMMIT_MESSAGE"
+    default: "Updated social rss by social-readme"
+    required: false
+
+  blog_rss_link:
+    description: "Your Blog rss link"
+    required: false
+
+  blog_limit:
+    description: "Your Blog LIMIT"
+    default: "5"
+    required: false
+
+  blog_time_format:
+    description: "Your Blog TIME_FORMAT"
+    default: "%a, %d %b %Y %H:%M:%S %z"
+    required: false
+
+  douban_name:
+    description: "Your Douban name"
+    required: false
+
+  douban_limit:
+    description: "Your Douban LIMIT"
+    default: "5"
+    required: false
+
+  time_zone:
+    description: "Your TIME_ZONE"
+    default: "Asia/Shanghai"
+    required: false
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+
+branding:
+  icon: "aperture"
+  color: "green"
