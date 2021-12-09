@@ -38,6 +38,40 @@ jobs:
           time_zone: "Asia/Shanghai"
 ```
 
+Remember to add following prompt to your GitHub Profile.
+
+```html
+<!-- START_SECTION:blog -->
+<!-- END_SECTION:blog -->
+
+<!-- START_SECTION:douban -->
+<!-- END_SECTION:douban -->
+```
+
+Prettier example
+```markdown
+<table width="100%" align="center">
+<tr>
+<td valign="top" width="50%">
+
+#### 🤹‍♀️ <a href="https://blog.bj-yan.top/" target="_blank">Recent Blog</a>
+
+<!-- START_SECTION:blog -->
+<!-- END_SECTION:blog -->
+</td>
+<td valign="top" width="50%">
+
+#### 🤾‍♂️ <a href="https://blog.bj-yan.top/" target="_blank">Funny Soul</a>
+
+<!-- START_SECTION:douban -->
+<!-- END_SECTION:douban -->
+</td>
+</tr>
+
+</table>
+```
+
+
 # Reference
 
 - Thanks to [zylele](https://github.com/zylele/social-readme) for their great work.
