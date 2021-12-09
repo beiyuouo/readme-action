@@ -54,7 +54,7 @@ if __name__ == "__main__":
     if DOUBAN_NAME is not None and DOUBAN_LIMIT > 0:
         print("DOUBAN_NAME:" + DOUBAN_NAME)
         print("DOUBAN_LIMIT:" + str(DOUBAN_LIMIT))
-        new_readme = social.generate_douban(DOUBAN_NAME, DOUBAN_LIMIT, new_readme, tz)
+        new_readme = social.generate_douban(DOUBAN_NAME, DOUBAN_LIMIT, new_readme, time_zone=tz)
 
     if new_readme == old_readme:
         print("nothing changed")

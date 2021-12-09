@@ -29,7 +29,7 @@ inputs:
 
   blog_time_format:
     description: "Your Blog TIME_FORMAT"
-    default: "%a, %d %b %Y %H:%M:%S GMT"
+    default: "%a, %d %b %Y %H:%M:%S %z"
     required: false
 
   douban_name:

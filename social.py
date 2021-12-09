@@ -32,7 +32,7 @@ def generate_blog(
     ]
 
     content = "\n".join([
-        "| <a href='{url}' target='_blank'>{title}</a> | {published} |".format(**item)
+        "| {published} | <a href='{url}' target='_blank'>{title}</a> |".format(**item)
         for item in arr
     ])
 
@@ -45,7 +45,7 @@ def generate_douban(
     username,
     limit,
     readme,
-    time_format='%a, %d %b %Y %H:%M:%S GMT',
+    time_format='%a, %d %b %Y %H:%M:%S %Z',
     time_zone=pytz.timezone('Asia/Shanghai')) -> str:
     """Generate douban"""
     entries = feedparser.parse("https://www.douban.com/feed/people/" + username +
@@ -60,7 +60,7 @@ def generate_douban(
     } for item in entries[:limit]]
 
     content = "\n".join([
-        "| <a href='{url}' target='_blank'>{title}</a> | {published} |".format(**item)
+        f"| {item['published']} | {item['title'][:2]}<a href='{item['url']}' target='_blank'>{item['title'][2:]}</a> |"
         for item in arr
     ])
 
@@ -90,5 +90,4 @@ def format_time(timestamp,
         print(e)
         return timestamp
     date_str = date_str.replace(tzinfo=time_zone)
-
     return date_str.date()
