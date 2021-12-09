@@ -1,6 +1,6 @@
-name: "social-readme"
-author: zylele
-description: "Add social feed in your Readme"
+name: "readme-action"
+author: Bingjie Yan
+description: "Add feed in your GitHub Profile using Actions"
 
 inputs:
   gh_token:
