@@ -5,7 +5,7 @@
 A simple example.
 
 ```yaml
-- uses: beiyuouo/readme-action
+- uses: beiyuouo/readme-action@main
     with:
     blog_rss_link: https://blog.bj-yan.top/index.xml
     douban_name: 179948994
@@ -27,7 +27,7 @@ jobs:
   update-social:
     runs-on: ubuntu-latest
     steps:
-      - uses: beiyuouo/readme-action
+      - uses: beiyuouo/readme-action@main
         with:
           blog_rss_link: https://blog.bj-yan.top/index.xml
           blog_limit: 5
