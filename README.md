@@ -46,6 +46,9 @@ Remember to add following prompt to your GitHub Profile.
 
 <!-- START_SECTION:douban -->
 <!-- END_SECTION:douban -->
+
+<!-- START_SECTION:github -->
+<!-- END_SECTION:github -->
 ```
 
 Prettier example
@@ -67,7 +70,16 @@ Prettier example
 <!-- END_SECTION:douban -->
 </td>
 </tr>
+<tr>
+<td valign="top" width="100%">
 
+#### 💻 <a href="https://github.com/beiyuouo" target="_blank">Recent Activity</a>
+
+<!-- START_SECTION:github -->
+<!-- END_SECTION:github -->
+
+</td>
+</tr>
 </table>
 ```
 

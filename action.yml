@@ -46,6 +46,16 @@ inputs:
     default: "Asia/Shanghai"
     required: false
 
+  github_name:
+    description: "Your GitHub name"
+    default: "${{ github.actor }}"
+    required: false
+
+  github_limit:
+    description: "Your GitHub LIMIT"
+    default: "5"
+    required: false
+
 runs:
   using: "docker"
   image: "Dockerfile"

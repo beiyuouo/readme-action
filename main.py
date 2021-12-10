@@ -22,6 +22,9 @@ BLOG_TIME_FORMAT = os.getenv('INPUT_BLOG_TIME_FORMAT')
 
 TIME_ZONE = os.getenv('INPUT_TIME_ZONE')
 
+GITHUB_NAME = os.getenv('INPUT_GITHUB_NAME')
+GITHUB_LIMIT = int(os.getenv('INPUT_GITHUB_LIMIT'))
+
 
 def decode_readme(data: str) -> str:
     """Decode the contents of old readme"""
@@ -55,6 +58,11 @@ if __name__ == "__main__":
         print("DOUBAN_NAME:" + DOUBAN_NAME)
         print("DOUBAN_LIMIT:" + str(DOUBAN_LIMIT))
         new_readme = social.generate_douban(DOUBAN_NAME, DOUBAN_LIMIT, new_readme, time_zone=tz)
+
+    if GITHUB_NAME is not None and GITHUB_LIMIT > 0:
+        print("GITHUB_NAME:" + GITHUB_NAME)
+        print("GITHUB_LIMIT:" + str(GITHUB_LIMIT))
+        new_readme = social.generate_github(GITHUB_NAME, GITHUB_LIMIT, new_readme, time_zone=tz)
 
     if new_readme == old_readme:
         print("nothing changed")
