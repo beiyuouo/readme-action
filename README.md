@@ -71,7 +71,7 @@ Prettier example
 </td>
 </tr>
 <tr>
-<td valign="top" width="100%">
+<td valign="top" width="100%" colspan="2">
 
 #### 💻 <a href="https://github.com/beiyuouo" target="_blank">Recent Activity</a>
 
