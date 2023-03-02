@@ -19,12 +19,16 @@ class TestDouban(object):
         TIME_ZONE = "Asia/Shanghai"
         tz = pytz.timezone(TIME_ZONE)
 
-        old_readme = social.DOUBAN_START_COMMENT + "old_content" + social.DOUBAN_END_COMMENT
+        old_readme = (
+            social.DOUBAN_START_COMMENT + "old_content" + social.DOUBAN_END_COMMENT
+        )
         new_readme = old_readme
 
         print("DOUBAN_NAME:" + DOUBAN_NAME)
         print("DOUBAN_LIMIT:" + str(DOUBAN_LIMIT))
-        new_readme = social.generate_douban(DOUBAN_NAME, DOUBAN_LIMIT, new_readme, time_zone=tz)
+        new_readme = social.generate_douban(
+            DOUBAN_NAME, DOUBAN_LIMIT, new_readme, time_zone=tz
+        )
         print("new_readme:")
         print(new_readme)
         assert old_readme != new_readme

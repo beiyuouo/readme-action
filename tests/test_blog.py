@@ -15,11 +15,9 @@ class TestBlog(object):
 
         print("BLOG_RSS_LINK:" + BLOG_RSS_LINK)
         print("BLOG_LIMIT:" + str(BLOG_LIMIT))
-        new_readme = social.generate_blog(BLOG_RSS_LINK,
-                                          BLOG_LIMIT,
-                                          new_readme,
-                                          time_format=TIME_FORMAT,
-                                          time_zone=tz)
+        new_readme = social.generate_blog(
+            BLOG_RSS_LINK, BLOG_LIMIT, new_readme, time_format=TIME_FORMAT, time_zone=tz
+        )
         print("new_readme:")
         print(new_readme)
         assert old_readme != new_readme
