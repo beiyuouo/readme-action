@@ -13,15 +13,18 @@ GITHUB_START_COMMENT = "<!-- START_SECTION:github -->"
 GITHUB_END_COMMENT = "<!-- END_SECTION:github -->"
 
 douban_emoji = {
-    "在看": "👀",
     "想看": "🤔",
+    "在看": "👀",
     "看过": "😎",
-    "在听": "🎧",
     "想听": "🎈",
+    "在听": "🎧",
     "听过": "😋",
-    "在读": "📚",
-    "想读": "📖",
+    "想读": "📚",
+    "在读": "📖",
     "读过": "🤓",
+    "想玩": "🎮",
+    "在玩": "🎯",
+    "玩过": "🕹",
 }
 
 douban_star = {
